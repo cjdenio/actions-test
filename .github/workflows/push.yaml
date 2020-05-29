@@ -1,5 +1,8 @@
 name: On Push
-on: push
+on:
+  push:
+    branches:
+      - master
 jobs: 
   test:
     name: Test
@@ -8,4 +11,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - uses: ./.github/actions/write-time
-      - run: git status
+      - run: |
+          git checkout -b test
+          git status
+          git commit -am "Update time"
+          git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
+          git push --set-upstream origin test

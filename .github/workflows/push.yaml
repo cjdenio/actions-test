@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout
+        uses: actions/checkout@master
       - uses: ./.github/actions/write-time
       - run: git status

@@ -1,0 +1,11 @@
+name: On Push
+on: push
+jobs: 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout
+      - uses: ./.github/actions/write-time
+      - run: git status

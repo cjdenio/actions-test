@@ -18,4 +18,4 @@ jobs:
           git status
           git commit -am "Update time"
           git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
-          git push --set-upstream origin test
+          git push --force --set-upstream origin test

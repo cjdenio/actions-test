@@ -17,5 +17,5 @@ jobs:
       - uses: ./.github/actions/write-time
       - run: |
           git status
-          git commit -am "Update time"
+          git commit --amend
           git push --force --set-upstream origin master

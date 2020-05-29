@@ -13,13 +13,12 @@ jobs:
       - run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git checkout -b test
+          git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
           git fetch
-          git branch --set-upstream-to origin/test test
+          git checkout --track origin/test
           git pull
       - uses: ./.github/actions/write-time
       - run: |
           git status
           git commit -am "Update time"
-          git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
           git push --force --set-upstream origin test

@@ -18,8 +18,9 @@ jobs:
           git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
           git pull
           git log
-      #- uses: ./.github/actions/write-time
-      #- run: |
-      #    git status
+      - uses: ./.github/actions/write-time
+      - run: |
+          git fetch
+          git status
       #    git commit --amend -am "Update time"
       #    git push --set-upstream origin master

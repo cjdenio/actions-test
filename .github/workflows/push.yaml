@@ -21,6 +21,7 @@ jobs:
       - uses: ./.github/actions/write-time
       - run: |
           git fetch
+          git add README.md
           git status
-      #    git commit --amend -am "Update time"
-      #    git push --set-upstream origin master
+          git commit --amend -m "Update time"
+          git push

@@ -23,5 +23,5 @@ jobs:
           git fetch
           git add README.md
           git status
-          git commit --amend -m "Update time"
+          git commit -m "Update time"
           git push

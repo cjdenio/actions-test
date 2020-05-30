@@ -17,11 +17,9 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
           git pull
-          git log
       - uses: ./.github/actions/write-time
       - run: |
           git fetch
           git add README.md
-          git status
           git commit -m "Update time"
           git push

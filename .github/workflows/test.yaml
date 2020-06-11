@@ -1,0 +1,10 @@
+name: Test
+on: push
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cjdenio/github-action-template-go@master
+        with:
+          name: Caleb De Nio

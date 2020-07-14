@@ -8,8 +8,5 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/config-test
-        with:
-          test:
-            moo: baa
-            test: yep
+      - uses: actions/checkout@master
+      - uses: cjdenio/contributor_list@master

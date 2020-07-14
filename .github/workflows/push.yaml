@@ -12,14 +12,4 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: '0'
-      - run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git remote set-url origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/cjdenio/actions-test.git
-          git pull
-      - uses: ./.github/actions/write-time
-      - run: |
-          git fetch
-          git add README.md
-          git commit -m "Update time"
-          git push
+      - uses: cjdenio/contributor_list@master

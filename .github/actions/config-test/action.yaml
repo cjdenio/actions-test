@@ -1,0 +1,10 @@
+name: Config Test
+author: Caleb Denio
+description: Testing 123...
+runs:
+  using: node12
+  main: index.js
+inputs:
+  test:
+    required: true
+    description: Test

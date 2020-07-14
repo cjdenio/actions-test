@@ -8,8 +8,8 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: ./.github/actions/config-test
         with:
-          fetch-depth: '0'
-      - uses: cjdenio/contributor_list@master
+          test:
+            moo: baa
+            test: yep

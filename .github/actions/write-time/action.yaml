@@ -1,6 +1,0 @@
-name: Write Time
-author: Caleb Denio
-description: Writes the current time into your README file.
-runs:
-  using: node12
-  main: index.js

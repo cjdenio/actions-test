@@ -8,6 +8,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - uses: ./.github/actions/config-test
         with:
           test: true

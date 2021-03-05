@@ -20,4 +20,4 @@ jobs:
         with:
           python-version: "3.7"
       - run: pip install frc-characterization
-      - run: which frc-characterization
+      - run: cat `which frc-characterization`

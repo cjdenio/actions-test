@@ -3,12 +3,21 @@ on:
   push:
     branches:
       - master
-jobs: 
+jobs:
+  # test:
+  #   name: Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - uses: ./.github/actions/config-test
+  #       with:
+  #         test: true
   test:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: ./.github/actions/config-test
+      - uses: actions/setup-python@v2
         with:
-          test: true
+          python-version: "3.7"
+      - run: pip install frc-characterization
+      - run: which frc-characterization
